@@ -10,8 +10,8 @@ class FreqBox {
 	private final Spinner<Integer> spinner;
 	
 	FreqBox(String lbl) {
-		spinner = new Spinner<>();//0, 0xffff, 0, 1);
-		spinner.valueFactoryProperty().set(new HexSpinnerValueFactory(0, 0xffff, 0, 1));
+		spinner = new Spinner<>(0, 0xffff, 0, 1);
+		HexStringConverter.createIn(spinner);
 		spinner.setEditable(true);
 		
 		Label label = new Label(lbl);
