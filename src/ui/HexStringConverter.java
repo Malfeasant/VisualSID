@@ -20,8 +20,10 @@ public class HexStringConverter extends IntegerStringConverter {
 		field = tf;
 		factory = fact;
 		Runnable update = () -> {
-			// do a little dance- makes sure string can be converted to int and back, then sets the text in the edit box to match.
-			// reason it's done this way- either have to do the same check twice, or field and value could get out of sync.
+			// do a little dance- makes sure string can be converted to int and back,
+			// then sets the text in the edit box to match.
+			// reason it's done this way- either have to do the same check twice,
+			// or field and value could get out of sync.
 			field.textProperty().set(toString(fromString(field.getText())));
 			field.selectAll();	// otherwise caret ends up at beginning of field- annoying
 		};
